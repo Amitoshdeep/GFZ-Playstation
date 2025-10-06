@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "BesopkeSerif";
+  src: url("/assets/fonts/BespokeSerif_Complete/Fonts/OTF/BespokeSerif-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Tanker";
+  src: url("/assets/fonts/Tanker_Complete/Fonts/OTF/Tanker-Regular.otf") format("opentype");
+}
+
+@theme{
+  /* fonts */
+  --font-besopke: "BesopkeSerif", serif;
+  --font-tanker: "Tanker", sans-serif;
+
+  /* Colors */
+  --color-white-10: #ffffff10;
+  --color-white-20: #ffffff20;
+  --color-white-30: #ffffff30;
+  --color-white-40: #ffffff40;
+}

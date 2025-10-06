@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Ghost of Yotei",
+    "cvrImg": "https://cdn2.steamgriddb.com/thumb/09e60d50a39ca9c64adfe2d255793e5e.jpg",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "Assassin’s Creed: Shadows",
+    "cvrImg": "https://cdn2.steamgriddb.com/thumb/1b3ef3ee60b4c3f07b7487ba1cc3b2cd.jpg",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "Spider-Man Remastered",
+    "cvrImg": "https://image.api.playstation.com/vulcan/ap/rnd/202009/3021/B2aUYFC0qUAkNnjbTHRyhrg3.png",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "Uncharted 4: A Thief’s End",
+    "cvrImg": "https://upload.wikimedia.org/wikipedia/en/1/1a/Uncharted_4_box_artwork.jpg",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "God of War Ragnarök",
+    "cvrImg": "https://cdn2.steamgriddb.com/thumb/fd93fd1de50e084dd7d3b0b9f6950450.jpg",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "Horizon Forbidden West",
+    "cvrImg": "https://cdn2.steamgriddb.com/thumb/509e2df19b9539b6feb63e375650a9de.jpg",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "The Last of Us Part I",
+    "cvrImg": "https://cdn2.steamgriddb.com/thumb/849d7b8124e44421cf640466299db4dc.jpg",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "Bloodborne",
+    "cvrImg": "https://cdn2.steamgriddb.com/thumb/021399af062379408df9c358a1a83cdb.jpg",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "Elden Ring",
+    "cvrImg": "https://cdn2.steamgriddb.com/thumb/9153bb77795515274c2be61ccc59c952.jpg",
+    "price": 4599,
+    "rent": 1299
+  },
+  {
+    "title": "Sekiro: Shadows Die Twice",
+    "cvrImg": "https://cdn2.steamgriddb.com/thumb/97771715c7dd7daf009feeb60c49915a.jpg",
+    "price": 4599,
+    "rent": 1299
+  }
+]
