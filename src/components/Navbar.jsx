@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { IoSearch } from "react-icons/io5";
 import { AiFillInstagram } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [active, setActive] = useState(false);
@@ -11,7 +12,10 @@ function Navbar() {
     className='flex justify-between items-center p-3 h-15 px-7 font-tanker bg-black overflow-hidden sticky top-0 z-10 '>
 
     {/* Just Name */}
-    <p className='text-2xl text-white'>GFZ</p>
+    <Link to='/'
+      className='text-2xl text-white'>
+        GFZ
+    </Link>
 
     {/* Search Bar */}
     <div className='w-1/3 h-10 flex items-center text-white'>
