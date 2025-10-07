@@ -68,8 +68,6 @@ function GamePage() {
         </div>
 
         {/* Rent / Buy Buttons */}
-
-        // inside the component
         <div className="flex gap-4 mt-4">
           <Link
             to={`/game/${slugify(game.title, { lower: true })}/rent`}

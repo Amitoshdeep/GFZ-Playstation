@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import useFetchData from "../hooks/useFetchData";
 import slugify from "slugify";
 import { QRCodeSVG } from "qrcode.react";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 // ✅ Config constants
 const UPI_ID = "8544890833@fam"; // easy to update
@@ -95,7 +96,7 @@ function BuyNowPage() {
         className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition transform hover:scale-110"
         title="Confirm Payment via WhatsApp"
       >
-        💬
+        <IoLogoWhatsapp className="text-2xl"/>
       </a>
     </div>
   );
