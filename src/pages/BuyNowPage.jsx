@@ -5,12 +5,11 @@ import slugify from "slugify";
 import { QRCodeSVG } from "qrcode.react";
 import { IoLogoWhatsapp } from "react-icons/io";
 
-// ✅ Config constants
-const UPI_ID = "8544890833@fam"; // easy to update
-const WHATSAPP_NUMBER = "918544890833"; // international format without "+" (e.g., 91XXXXXXXXXX)
+const UPI_ID = "8544890833@fam";
+const WHATSAPP_NUMBER = "918544890833";
 
 function BuyNowPage() {
-  const { title, type } = useParams(); // type = 'rent' or 'buy'
+  const { title, type } = useParams();
   const { data: games, loading, error } = useFetchData("/data/Game.json");
 
   if (loading)
@@ -45,45 +44,58 @@ function BuyNowPage() {
     );
 
   const price = type === "rent" ? game.rent : game.price;
-
-  // Dynamic UPI link
   const upiLink = `upi://pay?pa=${UPI_ID}&pn=${encodeURIComponent(
     game.title
   )}&am=${price}&cu=INR&tn=${type}`;
-
-  // WhatsApp link
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     `Hi! I have completed the ${type} payment for "${game.title}". Please confirm.`
   )}`;
 
+  // Rent-specific info
+  const rentInfo =
+    type === "rent"
+      ? {
+          pricePerMonth: "₹1,000",
+          maxDuration: "2 months",
+          options: ["1 month", "1.5 months", "2 months"],
+        }
+      : null;
+
   return (
-    <div className="min-h-screen bg-zinc-900 text-white flex flex-col items-center justify-center p-6 gap-8 relative">
-      {/* Game Title & Type */}
-      <h1 className="text-4xl font-bold text-center">
+    <div className="min-h-screen bg-zinc-900 text-white flex flex-col items-center justify-center p-8 gap-6">
+      {/* Title & Price */}
+      <h1 className="text-3xl font-bold text-center">
         {game.title} – {type === "rent" ? "Rent" : "Buy"}
       </h1>
-
-      {/* Price */}
       <p className="text-2xl font-semibold text-green-400">{price}</p>
 
       {/* QR Code */}
-      <div className="bg-zinc-800 rounded-lg p-6 shadow-lg flex flex-col items-center gap-4">
-        <p className="text-center text-white font-medium">
-          Scan this QR to pay
-        </p>
-        <QRCodeSVG value={upiLink} size={256} />
+      <div className="bg-zinc-800 rounded-lg p-6 shadow-md flex flex-col items-center gap-3">
+        <p className="text-center font-medium">Scan this QR to pay</p>
+        <QRCodeSVG value={upiLink} size={220} />
       </div>
 
       {/* Instructions */}
-      <p className="text-center text-zinc-300 max-w-md">
-        After payment, take a screenshot and send via WhatsApp for
-        confirmation. You’ll receive the game after verification.
-      </p>
+      <div className="bg-zinc-800 rounded-lg p-4 max-w-md shadow-md space-y-2 text-zinc-300">
+        <p>1️⃣ Scan QR and complete the payment.</p>
+        <p>2️⃣ Take a screenshot of the payment.</p>
+        <p>3️⃣ Click the WhatsApp button below to confirm payment.</p>
+        <p>4️⃣ You will receive the game after verification.</p>
+
+        {/* Rent-specific T&C */}
+        {rentInfo && (
+          <div className="mt-2 text-zinc-200">
+            <p>💰 Price per month: {rentInfo.pricePerMonth}</p>
+            <p>⏳ Max duration: {rentInfo.maxDuration}</p>
+            <p>📅 Available durations: {rentInfo.options.join(", ")}</p>
+          </div>
+        )}
+      </div>
 
       {/* Back Link */}
       <Link
         to={`/game/${slugify(game.title, { lower: true })}`}
-        className="mt-4 text-blue-400 hover:underline transition"
+        className="mt-2 text-blue-400 hover:underline transition"
       >
         ← Back to Game
       </Link>

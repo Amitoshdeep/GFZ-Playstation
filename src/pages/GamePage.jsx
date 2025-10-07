@@ -4,6 +4,7 @@ import useFetchData from "../hooks/useFetchData";
 import { motion } from "framer-motion";
 import slugify from "slugify";
 import SkeletonCard from "../components/HelpingComponents/SkeletonCard";
+import { IoMdCheckmarkCircle } from "react-icons/io";
 
 function GamePage() {
   const { title } = useParams();
@@ -37,6 +38,12 @@ function GamePage() {
       </div>
     );
 
+  const features = [
+    { icon: <IoMdCheckmarkCircle size={28} />, title: "Lifetime Warranty" },
+    { icon: <IoMdCheckmarkCircle size={28} />, title: "24x7 Support" },
+    { icon: <IoMdCheckmarkCircle size={28} />, title: "Instant Delivery" },
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -57,6 +64,20 @@ function GamePage() {
       {/* Info Section */}
       <div className="flex flex-col gap-6 max-w-lg">
         <h1 className="text-4xl font-bold text-white">{game.title}</h1>
+
+        {/* Features Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {features.map((f, idx) => (
+            <motion.div
+              key={idx}
+              className="flex items-center gap-2 bg-zinc-800/70 backdrop-blur-sm p-4 rounded-lg shadow-md hover:scale-105 transition-transform duration-200"
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="text-green-400">{f.icon}</div>
+              <p className="font-semibold">{f.title}</p>
+            </motion.div>
+          ))}
+        </div>
 
         {/* Description / Steps */}
         <div className="bg-zinc-800/70 backdrop-blur-sm p-4 rounded-lg shadow-md space-y-2">
