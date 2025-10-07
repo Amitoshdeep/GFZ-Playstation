@@ -32,7 +32,7 @@ function Navbar() {
     {/* The Logo */}
     <div className='relative'>
       <AiFillInstagram
-        className={`absolute text-4xl right-12 -translate-y-1/2 bg-gray-300 text-blue-500 rounded-full p-1 duration-300 cursor-pointer ${active ? "top-1/2" : "-top-10"}`}
+        className={`absolute text-4xl right-12 -translate-y-1/2 bg-zinc-800 text-white rounded-full p-1.5 duration-300 cursor-pointer ${active ? "top-1/2" : "-top-10"}`}
         onClick={()=> window.open('https://www.instagram.com/gfz_playstation/')}
       />
       <img src="/assets/imgs/GFZ.jpg" alt="" className='h-9 rounded-full z-10 relative cursor-pointer hover:scale-[1.1] duration-300' onClick={()=> setActive(!active)}/>
