@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules'
 import { motion } from 'framer-motion'
@@ -65,13 +66,13 @@ function HeroBanner() {
               ">
                 Digital Deluxe Edition — Experience the beauty of war and honor.
               </p>
-              <button className="
+              <Link to="/game/ghost-of-yotei" className="
                 bg-yellow-500 hover:bg-yellow-600 transition-all
                 px-4 py-2 sm:px-5 sm:py-3 rounded-xl font-semibold text-black
                 text-sm sm:text-base
               ">
                 Explore Now
-              </button>
+              </Link>
             </motion.div>
           </div>
         </SwiperSlide>
@@ -111,13 +112,13 @@ function HeroBanner() {
               ">
                 Discover the vast lands and ancient machines.
               </p>
-              <button className="
+              <Link to="/game/assassin's-creed:-shadows" className="
                 bg-yellow-500 hover:bg-yellow-600 transition-all
                 px-4 py-2 sm:px-5 sm:py-3 rounded-xl font-semibold text-black
                 text-sm sm:text-base
               ">
                 Play Now
-              </button>
+              </Link>
             </motion.div>
           </div>
         </SwiperSlide>
