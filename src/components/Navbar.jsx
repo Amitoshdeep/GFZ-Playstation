@@ -89,8 +89,8 @@ function Navbar() {
       {/* Logo + Instagram */}
       <div className="relative flex-shrink-0">
         <AiFillInstagram
-          className={`absolute text-4xl right-12 -translate-y-1/2 bg-zinc-800 text-white rounded-full p-1.5 duration-300 cursor-pointer ${
-            active ? "top-1/2" : "-top-10"
+          className={`absolute text-4xl right-0 md:right-12 -translate-y-1/2 bg-zinc-800 text-white rounded-full p-1.5 duration-300 cursor-pointer ${
+            active ? "top-15 md:top-1/2" : "-top-10"
           }`}
           onClick={() =>
             window.open("https://www.instagram.com/gfz_playstation/")
