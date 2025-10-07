@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/HeroBanner";
 import HeroSlider from '../components/HeroSlider';
 import GamesSection from '../components/GamesSection';
+import ImageSwiper from '../components/ImageSwiper';
 
 function Home() {
   return (
@@ -19,6 +20,11 @@ function Home() {
 
       <GamesSection/>
 
+      <div className='py-10 text-white font-tanker px-10'>
+        <h2 className=' font-tanker text-4xl'>Customer Screenshots</h2>
+        <p>Real WhatsApp screenshots from our customers.</p>
+        <ImageSwiper/>
+      </div>
     </div>
 
     </>
