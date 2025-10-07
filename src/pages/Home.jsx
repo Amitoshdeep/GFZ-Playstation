@@ -8,7 +8,7 @@ import GamesSection from '../components/GamesSection';
 function Home() {
   return (
     <>
-    <div className='h-screen w-screen overflow-x-hidden font-besopke cursor-default bg-black'>
+    <div className='h-screen w-screen  font-besopke cursor-default bg-black'>
       {/* Navbar */}
       <Navbar/>
 
