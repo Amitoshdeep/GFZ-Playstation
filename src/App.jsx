@@ -17,34 +17,27 @@ const [loading, setLoading] = useState(true);
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return (
-      <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
-        <AnimatePresence>
-          <motion.img
-            src="/assets/imgs/GFZ.jpg"
-            alt="GFZ Logo"
-            initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
-            animate={{
-              opacity: 1,
-              scale: [0.5, 1.2, 1],
-              rotate: [0, 360],
-            }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="h-32 w-32 rounded-full"
-          />
-        </AnimatePresence>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5, repeat: Infinity }}
-          className="text-white mt-4 text-xl font-bold animate-pulse"
-        >
-          {/* Loading... */}
-        </motion.p>
-      </div>
-    );
-  }
+    if (loading) {
+      return (
+        <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+          <div className="relative">
+            {/* Blue ping circle */}
+            <span className="absolute inline-flex h-32 w-32 rounded-full bg-blue-500 opacity-75 animate-ping"></span>
+
+            {/* Logo */}
+            <motion.img
+              src="/assets/imgs/GFZ.jpg"
+              alt="GFZ Logo"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="relative h-32 w-32 rounded-full z-10"
+            />
+          </div>
+        </div>
+      );
+    }
+
 
   return (
     <>
