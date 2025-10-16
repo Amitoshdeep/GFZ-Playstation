@@ -27,7 +27,7 @@ function GameCard() {
   return (
     <div className="text-white flex flex-col gap-5 p-4">
       {/* Game cards grid */}
-      <div className="flex flex-wrap gap-5 justify-center">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 justify-center">
         {loading
           ? Array(10)
               .fill()
@@ -48,16 +48,16 @@ function GameCard() {
                   >
                     <Link
                       to={`/game/${gameSlug}`}
-                      className="block" // ensures link covers entire card
+                      className="block h-full" // ensures link covers entire card
                     >
-                      <div className="flex flex-col gap-3 items-center p-4 rounded-3xl bg-zinc-900 shadow-md shadow-zinc-800 duration-300 hover:shadow-lg hover:-translate-y-2 cursor-pointer">
+                      <div className="flex h-full w-full text-center flex-col gap-3 items-center p-4 rounded-3xl bg-zinc-900 shadow-md shadow-zinc-800 duration-300 hover:shadow-lg hover:-translate-y-2 cursor-pointer">
                         <img
                           src={game.cvrImg}
                           alt={game.title}
-                          className="h-60 aspect-[12/16] object-cover rounded-2xl"
+                          className="h-40 md:h-60 aspect-[12/16] object-cover rounded-2xl"
                         />
-                        <p className="text-xl font-semibold">{game.title}</p>
-                        <p className="flex gap-2 text-lg">
+                        <p className="text-lg md:text-xl font-semibold">{game.title}</p>
+                        <p className="flex gap-2 text-md md:text-lg">
                           <span>{game.rent}</span> - <span>{game.price}</span>
                         </p>
                       </div>
