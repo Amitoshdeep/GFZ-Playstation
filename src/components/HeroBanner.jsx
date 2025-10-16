@@ -81,7 +81,7 @@ function HeroBanner() {
         <SwiperSlide>
           <div className="relative w-full h-full">
             <img
-              src="/assets/imgs/PlayStation3.jpg"
+              src="/assets/imgs/PlayStation2.jpeg"
               alt="PlayStation Banner 2"
               className="w-full h-full object-cover"
             />
